@@ -9,6 +9,7 @@ const locationId = 'asia-south1';
 const agentId = '59b7954f-420f-44e8-9199-d325889e12e6';
 const languageCode = 'en'
 const TELEGRAM_TOKEN=process.env.TELEGRAM_TOKEN;
+console.log(TELEGRAM_TOKEN);
 const SERVER_URL='https://telegrambot-gga1.onrender.com';
 
 const structProtoToJson =
