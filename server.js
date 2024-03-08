@@ -9,7 +9,8 @@ const locationId = 'asia-south1';
 const agentId = '59b7954f-420f-44e8-9199-d325889e12e6';
 const languageCode = 'en'
 const TELEGRAM_TOKEN=process.env.TELEGRAM_TOKEN;
-const SERVER_URL='https://telegramdialog.netlify.app/api/';
+const SERVER_URL='https://telegramdialog.netlify.app/api';
+const serverless = require('serverless-http');
 
 const structProtoToJson =
     require('./prototojson').structProtoToJson;
@@ -143,5 +144,6 @@ const listener = app.listen(process.env.PORT || 8080, async () => {
 
 module.exports = {
   telegramToDetectIntent,
-  convertToTelegramMessage
+  convertToTelegramMessage,
 };
+module.exports.handler = serverless(app);
