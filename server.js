@@ -9,7 +9,7 @@ const locationId = 'asia-south1';
 const agentId = '59b7954f-420f-44e8-9199-d325889e12e6';
 const languageCode = 'en'
 const TELEGRAM_TOKEN=process.env.TELEGRAM_TOKEN;
-const SERVER_URL='https://telegramdialog.netlify.app/api';
+const SERVER_URL='';
 const serverless = require('serverless-http');
 
 const structProtoToJson =
@@ -25,6 +25,11 @@ const WEBHOOK = SERVER_URL + URI;
 
 const app = express();
 app.use(bodyParser.json());
+app.use("/.netlify", app);
+
+app.get('/joel', (req, res) => {
+  res.send('Hello World!');
+});
 
 
 // Imports the Google Cloud Some API library
@@ -142,8 +147,8 @@ const listener = app.listen(process.env.PORT || 8080, async () => {
   await setup();
 });
 
-module.exports = {
-  telegramToDetectIntent,
-  convertToTelegramMessage,
-};
+// module.exports = {
+//   telegramToDetectIntent,
+//   convertToTelegramMessage,
+// };
 module.exports.handler = serverless(app);
