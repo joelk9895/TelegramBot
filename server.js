@@ -3,12 +3,13 @@
  * Add your service key to the current folder.
  * Uncomment and fill in these variables.
  */
+let dotenv = require('dotenv').config()
 const projectId = 'goalbook-415007';
 const locationId = 'asia-south1';
 const agentId = '59b7954f-420f-44e8-9199-d325889e12e6';
 const languageCode = 'en'
 const TELEGRAM_TOKEN=process.env.TELEGRAM_TOKEN;
-const SERVER_URL='https://235d-223-190-206-19.ngrok-free.app';
+const SERVER_URL='https://telegramdialog.netlify.app/';
 
 const structProtoToJson =
     require('./prototojson').structProtoToJson;
