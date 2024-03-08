@@ -10,7 +10,6 @@ const agentId = '59b7954f-420f-44e8-9199-d325889e12e6';
 const languageCode = 'en'
 const TELEGRAM_TOKEN=process.env.TELEGRAM_TOKEN;
 const SERVER_URL='';
-const serverless = require('serverless-http');
 
 const structProtoToJson =
     require('./prototojson').structProtoToJson;
@@ -147,8 +146,7 @@ const listener = app.listen(process.env.PORT || 8080, async () => {
   await setup();
 });
 
-// module.exports = {
-//   telegramToDetectIntent,
-//   convertToTelegramMessage,
-// };
-module.exports.handler = serverless(app);
+module.exports = {
+  telegramToDetectIntent,
+  convertToTelegramMessage,
+};
