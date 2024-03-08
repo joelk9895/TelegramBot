@@ -9,7 +9,7 @@ const locationId = 'asia-south1';
 const agentId = '59b7954f-420f-44e8-9199-d325889e12e6';
 const languageCode = 'en'
 const TELEGRAM_TOKEN=process.env.TELEGRAM_TOKEN;
-const SERVER_URL='https://telegramdialog.netlify.app/';
+const SERVER_URL='https://telegramdialog.netlify.app/api/';
 
 const structProtoToJson =
     require('./prototojson').structProtoToJson;
