@@ -9,7 +9,7 @@ const locationId = 'asia-south1';
 const agentId = '59b7954f-420f-44e8-9199-d325889e12e6';
 const languageCode = 'en'
 const TELEGRAM_TOKEN=process.env.TELEGRAM_TOKEN;
-const SERVER_URL='';
+const SERVER_URL='https://318c-171-49-160-167.ngrok-free.app';
 
 const structProtoToJson =
     require('./prototojson').structProtoToJson;
@@ -24,7 +24,6 @@ const WEBHOOK = SERVER_URL + URI;
 
 const app = express();
 app.use(bodyParser.json());
-app.use("/.netlify", app);
 
 app.get('/joel', (req, res) => {
   res.send('Hello World!');
